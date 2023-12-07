@@ -59,16 +59,24 @@
         <input type="text" name="tTelefone" id="tTelefone"/>
         <br><br>
 
+        <Label>Unidade da Farmacia:</Label>
+            <select name="farmacia" id="farmacia">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+                <option value="4">D</option>
+            </select>
+        <br><br>
+
+        <button id="Voltar"> <a href="index.php"> Voltar </a></button>
+        <br>
         <button id="button"> Cadastrar 
         <?php
             $conexao = new Conexao();
             $inserir = new Inserir();
-            $inserir->Insert($conexao, "info", $_POST['tNome'], $_POST['tRG'], $_POST['tTelefone'], $_POST['listPlano'], $_POST['listFarm']);
+            $inserir->Insert($conexao, "info", $_POST['tNome'], $_POST['tRG'], $_POST['tTelefone'], $_POST['listPlano'], $_POST['listFarm'], $_POST['farmacia']);
         ?>
         </button>
-            
-        <br><br>
-        <button id="Voltar"> <a href="index.php"> Voltar </a></button>
     </form>
 </body>
 </html>

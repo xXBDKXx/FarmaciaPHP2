@@ -13,14 +13,15 @@
          int $tRG,
          string $tTelefone,
          string $listPlano,
-         string $listFarm
+         string $listFarm,
+         string $farmacia
         )
         
          {
 
             try{
                     $conn = $conexao->Conectar();
-                    $sql ="insert into $info(nome,RG, telefone, listPlano, listFarm) values('$tNome','$tRG','$tTelefone','$listPlano','$listFarm')";
+                    $sql ="insert into $info(nome,RG, telefone, listPlano, listFarm, farmacia) values('$tNome','$tRG','$tTelefone','$listPlano','$listFarm','$farmacia')";
                     $result = mysqli_query($conn, $sql);
                     if($result){
                         return "<br><br>Inserido com sucesso";

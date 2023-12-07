@@ -8,7 +8,8 @@
 
     class Consultar{
 
-        public function ConsultarIndividual(Conexao $conexao, string $nomeTabela, int $RG){
+        public function ConsultarIndividual(Conexao $conexao, string $nomeTabela, int $RG)
+        {
             try{
 
                 $conn = $conexao->Conectar();
@@ -16,12 +17,14 @@
                 $result = mysqli_query($conn,$sql);
 
                 while($dados = mysqli_fetch_Array($result)){
-                    if($dados["RG"] == $RG){
+                    if($dados["RG"] == $RG)
+                    {
                         echo"<br><br>Nome:".$dados["nome"].
                         "<br>RG:".$dados["RG"].
-                        "<br>Telefone".$dados["telefone"].
-                        "<br>listPlano".$dados["listPlano"].
-                        "<br>listFarm:".$dados["listFarm"];
+                        "<br>Telefone".$dados["Telefone"].
+                        "<br>listPlano".$dados["listplano"].
+                        "<br>listFarm:".$dados["listfarm"].
+                        "<br>farmacia:".$dados["farmacia"];
                     }
                 }
                 mysqli_close($conn);
@@ -29,27 +32,6 @@
                 echo $erro;
             }
         }//fim do metodo
-
-        public function ConsultarTudo(Conexao $conexao, string $nomeTabela){
-            try{
-
-                $conn = $conexao->Conectar();
-                $sql = "select * from $nomeTabela";
-                $result = mysqli_query($conn, $sql);
-
-                while($dados = mysqli_fetch_Array($result)){
-                    echo "<br><br>nome:".$dados["nome"].
-                    "<br>RG:".$dados["RG"].
-                    "<br>Telefone".$dados["telefone"].
-                    "<br>lisPlano".$dados["listPlano"].
-                    "<br>listFarm:".$dados["listFarm"];
-                }//fim do enquanto
-
-            }catch(Except $erro){
-                    echo $erro;
-            }
-        }//fim do método
-
     }//fim da classe 
    
 ?>

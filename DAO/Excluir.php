@@ -6,10 +6,10 @@
     use POO\ProjetoBDPHP\DAO\Conexao;
 
     class Excluir{
-        public function Deletar(Conexao $conexao, string $nomeTabela, int $cpf){
+        public function Deletar(Conexao $conexao, string $nomeTabela, int $RG){
             try{
                 $conn   = $conexao->Conectar();
-                $sql    = "delete from $nomeTabela where cpf = '$cpf'";
+                $sql    = "delete from $nomeTabela where RG = '$RG'";
                 $result = mysqli_query($conn, $sql);
                 
                 if($result){

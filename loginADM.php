@@ -31,14 +31,12 @@
         <br><br>
 
         <button> Entrar
-            <?php if(('tUser' == 'admin') && ('tSenha' == 'admin'))
-                { 
-                    echo 'Acesso Permitido';
-                }
-                else
-                {
-                    echo 'Acesso Negado';
-                }//fim do enquanto
+        <?php
+            if(($_POST['tUser'] == 'admin') && ($_POST['tSenha'] == 'admin')) 
+            {
+                header("location: adm.php");
+            } 
+            else { echo 'Acesso Negado'; } 
             ?>
         </button>
 

@@ -4,7 +4,7 @@
     class Conexao{
         public function Conectar(){
             try{
-                $conn = mysqli_connect('localhost', 'root','','Farmacia');
+                $conn = mysqli_connect('localhost', 'root','','farmacia');
                 if($conn){
                     echo "\n\nConectado com o banco de dados";
                     return $conn;
