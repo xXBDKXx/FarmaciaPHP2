@@ -25,7 +25,6 @@
                     $result = mysqli_query($conn, $sql);
                     if($result){
                         return "<br><br>Inserido com sucesso";
-
                     }else{
                         return "<br><br> Não Inserido";
                     }

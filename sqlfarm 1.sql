@@ -12,5 +12,3 @@ farmacia varchar(10)
 );
 
 select * from info;
-
-drop database farmacia;
